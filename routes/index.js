@@ -25,4 +25,9 @@ indexRouter.get("/new", (req, res) => {
     res.render("pages/new.ejs")
 })
 
+indexRouter.post("/new", (req, res) => {
+    console.log("Post Request Made!")
+    res.redirect("/")
+})
+
 module.exports = indexRouter;
