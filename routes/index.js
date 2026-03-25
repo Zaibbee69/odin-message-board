@@ -26,7 +26,13 @@ indexRouter.get("/new", (req, res) => {
 })
 
 indexRouter.post("/new", (req, res) => {
-    console.log("Post Request Made!")
+
+    const messageText = req.body.name;
+    const messageUser = req.body.text;
+
+    messages.push({ text: messageText, user: messageUser, added: new Date() });
+
+    console.log("Post Request Made!", req.body)
     res.redirect("/")
 })
 
